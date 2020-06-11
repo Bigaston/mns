@@ -9,7 +9,7 @@ L'adresse du serveur de reception des messages doit être spécifiée dans un ch
 Il doit avoir la forme "mns='{adresse_du_serveur}'"
 
 ## Chemin et réponses
-**GET /keys** : Renvoit la liste des algorithmes de chiffrement supportés par le serveur, par ordre de prioritée. Chaque serveur doit au moins supporter le chiffrement RSA.
+**GET /keys** : Renvoit la liste des algorithmes de chiffrement supportés par le serveur, par ordre de prioritée. Chaque serveur doit au moins supporter le chiffrement RSA.  
 Réponse : `200`
 ```
 {
@@ -17,9 +17,9 @@ Réponse : `200`
 }
 ```
 
-**GET /keys/@[Utilisateur]/[algo]** : Renvoit la clé publique de *Utilisateur* pour l'algorythme *algo*
-Réponse : `400` L'algorythme utilisé n'est pas supporté par le serveur
-Réponse : `404` L'utilisateur n'est pas trouvé
+**GET /keys/@[Utilisateur]/[algo]** : Renvoit la clé publique de *Utilisateur* pour l'algorythme *algo*  
+Réponse : `400` L'algorythme utilisé n'est pas supporté par le serveur  
+Réponse : `404` L'utilisateur n'est pas trouvé  
 Réponse : `200`
 ```
 {
@@ -29,7 +29,7 @@ Réponse : `200`
 }
 ```
 
-**POST /msg/** : Envoit d'un message au serveur
+**POST /msg/** : Envoit d'un message au serveur  
 Body :
 ```
 {
@@ -41,9 +41,9 @@ Body :
     "hash": "LeHashDuMessage"
 }
 ```
-Hash : Contient le hash du message chiffré, chiffré à son tour par la clé privée de l'expéditeur. Utilisation de l'algorythme HS256
+Hash : Contient le hash du message chiffré, chiffré à son tour par la clé privée de l'expéditeur. Utilisation de l'algorythme HS256  
 msg : Contient le message chiffré par la clé publique du destinataire
 
-Réponse : `400` L'algorythme utilisé n'est pas supporté par le serveur
-Réponse : `404` L'utilisateur n'est pas trouvé
+Réponse : `400` L'algorythme utilisé n'est pas supporté par le serveur  
+Réponse : `404` L'utilisateur n'est pas trouvé  
 Réponse : `200` Message reçu
