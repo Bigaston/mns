@@ -41,7 +41,7 @@ Body :
     "hash": "LeHashDuMessage"
 }
 ```
-Hash : Contient le hash du message chiffré, chiffré à son tour par la clé privée de l'expéditeur
+Hash : Contient le hash du message chiffré, chiffré à son tour par la clé privée de l'expéditeur. Utilisation de l'algorythme HS256
 msg : Contient le message chiffré par la clé publique du destinataire
 
 Réponse : `400` L'algorythme utilisé n'est pas supporté par le serveur
