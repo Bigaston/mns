@@ -1,2 +1,2 @@
 # mns
-Message Network System
+Protocole de messagerie inspiré des emails et de mastodon, passant via HTTPS
